@@ -10,6 +10,8 @@ import Joker3 from "./assets/joker3.png"
 import Joker4 from "./assets/joker4.png"
 import Twitter from "./assets/twitter.png"
 import Telegram from "./assets/telegram.png"
+import { ReactLenis } from "@studio-freight/react-lenis";
+import Lenis from "@studio-freight/lenis";
 import 'aos/dist/aos.css'
 
 import {
@@ -40,7 +42,7 @@ function App() {
   const roadMap = useRef(null)
 
   const handleScroll = (target) => {
-    target.current?.scrollIntoView({behavior: 'smooth'});
+    target.current?.scrollIntoView({ behavior: 'smooth' });
   }
 
 
@@ -152,210 +154,229 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    })
+
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+
+
 
   return (
-    <div className="main-container">
-      <div className="header" ref={home}>
-        <img src={Joker} alt="Joker" />
-        <div className="light" />
-        <nav>
-          <ul>
-            <li onClick={()=>handleScroll(home)}>Home</li>
-            <li onClick={()=>handleScroll(aboutSection)}>About</li>
-            <li onClick={()=>handleScroll(howToBuy)}>How to buy</li>
-            <li onClick={()=>handleScroll(tokenNomics)}>Tokenomics</li>
-            <li onClick={()=>handleScroll(roadMap)}>Roadmap</li>
-          </ul>
-        </nav>
+    <ReactLenis root>
+      <div className="main-container">
+        <div className="header" ref={home}>
+          <img src={Joker} alt="Joker" />
+          <div className="light" />
+          <nav>
+            <ul>
+              <li onClick={() => handleScroll(home)}>Home</li>
+              <li onClick={() => handleScroll(aboutSection)}>About</li>
+              <li onClick={() => handleScroll(howToBuy)}>How to buy</li>
+              <li onClick={() => handleScroll(tokenNomics)}>Tokenomics</li>
+              <li onClick={() => handleScroll(roadMap)}>Roadmap</li>
+            </ul>
+          </nav>
 
-        <div className='title'>
-          <div className='title-text'>
-            $Joker
-          </div>
-          <h2>In his sadness, he laughs</h2>
-          <img src={JokerToken} />
-          <img src={JokerToken} />
-          <img src={JokerToken} />
-          <img src={JokerToken} />
-          <img src={JokerToken} />
-        </div>
-      </div>
-
-      <main>
-        <img className='green-light1' src={GreenLight3} />
-        <img className='green-light2' src={GreenLight2} />
-        <img className='green-light3' src={GreenLight3} />
-        <img className='green-light4' src={GreenLight2} />        
-
-        <div id='about-section' ref={aboutSection}>
-          <h3>About $Joker</h3>
-          <div className='about-details'>
-            <p>$Joker is an ERC20 token designed to capture the essence of the infamous
-              comic book and movie character, the Joker. With a twist of humor and mischief,
-              this meme coin aims to bring you and entertainment to the cryptocurrency world.
-            </p>
+          <div className='title'>
+            <div className='title-text'>
+              $Joker
+            </div>
+            <h2>In his sadness, he laughs</h2>
+            <img src={JokerToken} />
+            <img src={JokerToken} />
+            <img src={JokerToken} />
+            <img src={JokerToken} />
             <img src={JokerToken} />
           </div>
+        </div>
 
-          <div id="how-to-buy" ref={howToBuy}>
-            <h3>How to buy $Joker</h3>
-            <div className='how-to-buy-details'>
-              {/* <img src={MockUp} /> */}
+        <main>
+          <img className='green-light1' src={GreenLight3} />
+          <img className='green-light2' src={GreenLight2} />
+          <img className='green-light3' src={GreenLight3} />
+          <img className='green-light4' src={GreenLight2} />
 
-              <div className={`card ${isHovered ? 'hovered' : ''}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-                <div className="card-details">
-                  <h4>Create a wallet</h4>
-                  <p>
-                    Download MetaMask or your wallet of choice from the app store or Google Play Store for free. Desktop users can download the Google Chrome extension by going to metamask.io.
-                  </p>
-                </div>
-                <img src={Joker1} className="card-image" alt="Card" />
-              </div>
-              <div className='card'>
-                <div className='card-details'>
-                  <h4>Get some Eth</h4>
-                  <p>have ETH in your wallet to switch to <span>$JOKER.</span>If you don’t have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
-                </div>
-                <img src={Joker2} className="card-image" />
-              </div>
-
-              <div className='card'>
-                <div className='card-details'>
-                  <h4>Go to Uniswap</h4>
-                  <p>connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app. Connect your wallet. Paste the <span>$JOKER</span> token address into Uniswap, select Joker, and confirm. When Metamask prompts you for a wallet signature, sign.</p>
-                </div>
-                <img src={Joker3} className="card-image" />
-              </div>
-
-              <div className='card'>
-                <div className='card-details'>
-                  <h4>Switch Eth for $Joker</h4>
-                  <p>switch ETH for <span>$JOKER</span>. We have ZERO taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.</p>
-                </div>
-                <img src={Joker4} className="card-image" />
-              </div>
-
-            </div>
-
-          </div>
-
-          <div id='tokenomics' ref={tokenNomics}>
-            <h3>Tokenomics</h3>
-            <div className='tokenomics-details'>
-              <div>
-                <h5>Token supply: 420,690,000,000,000</h5>
-                <div className='token-details'>
-                  <p>
-                    No Taxes, No Bullshit. It’s that simple.
-                    93.1% of the tokens were sent to the liquidity pool, LP tokens were burnt, and contract is renounced.
-                    The remaining 6.9% of the supply is being held in a multi-sig wallet only to be used
-                    as tokens for future centralized exchange listings, bridges, and
-                    liquidity pools. This wallet is easily trackable with the ENS name
-                    “pepecexwallet.eth”</p>
-                </div>
-              </div>
-              <div className='chart'>
-                <Doughnut
-                  data={data}
-                  options={options}
-                />
-              </div>
-            </div>
-
-          </div>
-
-
-          <div id="roadmap" ref={roadMap}>
-            <h3>Roadmap</h3>
-            <div className='description'>
-              <p>All jokes aside, here is a rough sketch of $pepe path ahead.
-                We dont wan’t to give everything away on day 1 😁 
+          <div id='about-section' ref={aboutSection}>
+            <h3>About $Joker</h3>
+            <div className='about-details'>
+              <p>$Joker is an ERC20 token designed to capture the essence of the infamous
+                comic book and movie character, the Joker. With a twist of humor and mischief,
+                this meme coin aims to bring you and entertainment to the cryptocurrency world.
               </p>
+              <img src={JokerToken} />
+            </div>
 
-              <div className='roadmap-card-container'>
-                <div className='roadmap-card'>
-                  <h4>Phase 1</h4>
-                  <p>Meme</p>
+            <div id="how-to-buy" ref={howToBuy}>
+              <h3>How to buy $Joker</h3>
+              <div className='how-to-buy-details'>
+                {/* <img src={MockUp} /> */}
+
+                <div className={`card ${isHovered ? 'hovered' : ''}`} onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+                  <div className="card-details">
+                    <h4>Create a wallet</h4>
+                    <p>
+                      Download MetaMask or your wallet of choice from the app store or Google Play Store for free. Desktop users can download the Google Chrome extension by going to metamask.io.
+                    </p>
+                  </div>
+                  <img src={Joker1} className="card-image" alt="Card" />
                 </div>
-                <hr/>
-                <div className='roadmap-card'>
-                  <h4>Phase 2</h4>
-                  <p>Vibe & HODL</p>
+                <div className='card'>
+                  <div className='card-details'>
+                    <h4>Get some Eth</h4>
+                    <p>have ETH in your wallet to switch to <span>$JOKER.</span>If you don’t have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+                  </div>
+                  <img src={Joker2} className="card-image" />
                 </div>
-                <hr/>
-                <div className='roadmap-card'>
-                  <h4>Phase 3</h4>
-                  <p>Meme Takeover</p>
+
+                <div className='card'>
+                  <div className='card-details'>
+                    <h4>Go to Uniswap</h4>
+                    <p>connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app. Connect your wallet. Paste the <span>$JOKER</span> token address into Uniswap, select Joker, and confirm. When Metamask prompts you for a wallet signature, sign.</p>
+                  </div>
+                  <img src={Joker3} className="card-image" />
+                </div>
+
+                <div className='card'>
+                  <div className='card-details'>
+                    <h4>Switch Eth for $Joker</h4>
+                    <p>switch ETH for <span>$JOKER</span>. We have ZERO taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.</p>
+                  </div>
+                  <img src={Joker4} className="card-image" />
+                </div>
+
+              </div>
+
+            </div>
+
+            <div id='tokenomics' ref={tokenNomics}>
+              <h3>Tokenomics</h3>
+              <div className='tokenomics-details'>
+                <div>
+                  <h5>Token supply: 420,690,000,000,000</h5>
+                  <div className='token-details'>
+                    <p>
+                      No Taxes, No Bullshit. It’s that simple.
+                      93.1% of the tokens were sent to the liquidity pool, LP tokens were burnt, and contract is renounced.
+                      The remaining 6.9% of the supply is being held in a multi-sig wallet only to be used
+                      as tokens for future centralized exchange listings, bridges, and
+                      liquidity pools. This wallet is easily trackable with the ENS name
+                      “pepecexwallet.eth”</p>
+                  </div>
+                </div>
+                <div className='chart'>
+                  <Doughnut
+                    data={data}
+                    options={options}
+                  />
                 </div>
               </div>
+
             </div>
-            <div>
-              <div className="timeline">
-                <div className="line" />
-                <div className="section">
-                  {/* <div className="bead" /> */}
-                  <div
-                    className="content"
-                    data-aos="fade-right"
-                    data-aos-delay="200"
-                  >
-                    <h5>Phase 1</h5>
-                    <ul>
-                      <li>Launch</li>
-                      <li>CoinGecko/Coinmarketcap Listings</li>
-                      <li>1,000+ Holders</li>
-                      <li>Get $PEPE Trending on Twitter with our memetic power</li>
-                    </ul>
+
+
+            <div id="roadmap" ref={roadMap}>
+              <h3>Roadmap</h3>
+              <div className='description'>
+                <p>All jokes aside, here is a rough sketch of $pepe path ahead.
+                  We dont wan’t to give everything away on day 1 😁
+                </p>
+
+                <div className='roadmap-card-container'>
+                  <div className='roadmap-card'>
+                    <h4>Phase 1</h4>
+                    <p>Meme</p>
+                  </div>
+                  <hr />
+                  <div className='roadmap-card'>
+                    <h4>Phase 2</h4>
+                    <p>Vibe & HODL</p>
+                  </div>
+                  <hr />
+                  <div className='roadmap-card'>
+                    <h4>Phase 3</h4>
+                    <p>Meme Takeover</p>
                   </div>
                 </div>
-
-                <div className="section">
-                  {/* <div className="bead" /> */}
-                  <div
-                    className="content"
-                    data-aos="fade-left"
-                    data-aos-delay="200"
-                  >
-                    <h5>Phase 2</h5>
-                    <ul>
-                      <li>Launch</li>
-                      <li>CoinGecko/Coinmarketcap Listings</li>
-                      <li>1,000+ Holders</li>
-                      <li>Get $PEPE Trending on Twitter with our memetic power</li>
-                    </ul>
+              </div>
+              <div>
+                <div className="timeline">
+                  <div className="line" />
+                  <div className="section">
+                    {/* <div className="bead" /> */}
+                    <div
+                      className="content"
+                      data-aos="fade-right"
+                      data-aos-delay="200"
+                    >
+                      <h5>Phase 1</h5>
+                      <ul>
+                        <li>Launch</li>
+                        <li>CoinGecko/Coinmarketcap Listings</li>
+                        <li>1,000+ Holders</li>
+                        <li>Get $PEPE Trending on Twitter with our memetic power</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
 
-                <div className="section">
-                  {/* <div className="bead" /> */}
-                  <div
-                    className="content"
-                    data-aos="fade-right"
-                    data-aos-delay="200"
-                  >
-                    <h5>Phase 3</h5>
-                    <ul>
-                      <li>Launch</li>
-                      <li>CoinGecko/Coinmarketcap Listings</li>
-                      <li>1,000+ Holders</li>
-                      <li>Get $PEPE Trending on Twitter with our memetic power</li>
-                    </ul>
+                  <div className="section">
+                    {/* <div className="bead" /> */}
+                    <div
+                      className="content"
+                      data-aos="fade-left"
+                      data-aos-delay="200"
+                    >
+                      <h5>Phase 2</h5>
+                      <ul>
+                        <li>Launch</li>
+                        <li>CoinGecko/Coinmarketcap Listings</li>
+                        <li>1,000+ Holders</li>
+                        <li>Get $PEPE Trending on Twitter with our memetic power</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="section">
+                    {/* <div className="bead" /> */}
+                    <div
+                      className="content"
+                      data-aos="fade-right"
+                      data-aos-delay="200"
+                    >
+                      <h5>Phase 3</h5>
+                      <ul>
+                        <li>Launch</li>
+                        <li>CoinGecko/Coinmarketcap Listings</li>
+                        <li>1,000+ Holders</li>
+                        <li>Get $PEPE Trending on Twitter with our memetic power</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-      <footer>
-        <h4>Contact us</h4>
-        <img src={JokerToken} />
-        <div>
-          <a href='https://twitter.com/mrjoker_erc20?t=O5GAFh4SI5kULtkcQBkEaQ&s=09' target={"_blank"} rel="noreferrer"><img src={Twitter} className="social" /></a>
-          <a href="https://t.me/mrjokertoken" target={"_blank"} rel="noreferrer"><img src={Telegram} className="social" /></a>
-        </div>
-      </footer>
-    </div>
+        </main>
+        <footer>
+          <h4>Contact us</h4>
+          <img src={JokerToken} />
+          <div>
+            <a href='https://twitter.com/mrjoker_erc20?t=O5GAFh4SI5kULtkcQBkEaQ&s=09' target={"_blank"} rel="noreferrer"><img src={Twitter} className="social" /></a>
+            <a href="https://t.me/mrjokertoken" target={"_blank"} rel="noreferrer"><img src={Telegram} className="social" /></a>
+          </div>
+        </footer>
+      </div>
+    </ReactLenis>
+
   );
 }
 
