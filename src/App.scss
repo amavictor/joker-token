@@ -1,12 +1,12 @@
 .main-container {
   position: relative;
 
-  img { 
-    -webkit-user-drag: none; 
-    -khtml-user-drag: none; 
-    -moz-user-drag: none; 
-    -o-user-drag: none; 
-    user-drag: none; 
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
   }
 
   .header {
@@ -40,6 +40,13 @@
     top: 0;
     left: 0;
     z-index: 3;
+
+
+    @media screen and (max-width:768px) {
+        display: none;
+    }
+
+    
 
     ul {
       display: flex;
@@ -75,6 +82,9 @@
 
     h2 {
       font-size: 3rem;
+      @media screen and (max-width:768px) {
+        font-size: 2rem;
+      }
     }
 
     img {
@@ -82,8 +92,13 @@
       width: 10rem;
       height: 10rem;
 
+      @media screen and (max-width:768px) {
+          width: 5rem;
+          height: 5rem;
+      }
+
       &:nth-of-type(1) {
-        top: 30%;
+        top: 20%;
         right: 5%;
         filter: brightness(0.4) blur(2px);
         animation: levitate 2s 1s ease-in-out infinite alternate;
@@ -93,6 +108,10 @@
         top: 55%;
         right: 45%;
         animation: levitate 2s ease-in-out infinite alternate;
+        @media screen and (max-width:768px) {
+          right: 40%;
+          top: 52%;
+        }
       }
 
       &:nth-of-type(3) {
@@ -127,7 +146,12 @@
       -webkit-background-clip: text;
       background-image: url("https://cdn.dribbble.com/users/91750/screenshots/3407559/9-dribbble-lossy.gif");
       background-size: 120%;
+
+      @media screen and (max-width:768px) {
+        font-size: 9rem;
+      }
     }
+
   }
 
   main {
@@ -154,6 +178,7 @@
       left: 0;
       z-index: -2;
     }
+
     .green-light4 {
       position: absolute;
       top: 80%;
@@ -165,10 +190,22 @@
     #about-section {
       padding: 10%;
 
+      @media screen and (max-width:768px) {
+        h3{
+          font-size: 3rem;
+          text-align: center;
+        }
+      }
+
       .about-details {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media screen and (max-width:768px) {
+          flex-direction: column;
+          gap: 60px;
+
+        }
 
         p {
           font-size: 2rem;
@@ -178,18 +215,31 @@
           width: 50rem;
           text-align: justify;
           text-justify: inter-word;
+          @media screen and (max-width:768px) {
+            font-size: 1.2rem;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+          }
         }
 
         img {
           width: 30rem;
           height: 30rem;
           animation: levitate 2s 1s ease-in-out infinite alternate;
+          @media screen and (max-width:768px) {
+            width: 10rem;
+            height: 10rem;
+          }
 
         }
       }
 
       h3 {
         font-size: 7rem;
+        @media screen and (max-width:768px) {
+          font-size: 3rem;
+        }
       }
 
     }
@@ -197,11 +247,16 @@
 
   #how-to-buy {
     margin-top: 10%;
-    
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0,  0.2)), url("./assets/jokerColored.jpg");
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.2)), url("./assets/jokerColored.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
+    @media screen and (max-width:768px) {
+        >h3{
+          text-align: center;
+        }
+    }
     .how-to-buy-details {
 
       &>div {
@@ -221,17 +276,38 @@
 
   #tokenomics {
     margin-top: 20%;
+    @media screen and (max-width:768px) {
+        h3{
+          text-align: center;
+        }
+    }
 
     .tokenomics-details {
       display: flex;
       align-items: center;
       justify-content: center;
+      @media screen and (max-width:768px) {
+        flex-direction: column;
+        align-items: center !important;
+        gap: 40px;
+        
+      }
 
       &>div {
         width: fit-content;
+        @media screen and (max-width:768px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 40px;
+        }
 
         &>h5 {
           font-size: 3rem;
+          @media screen and (max-width:768px) {
+            font-size: 2rem;
+            text-align: center;
+          }
         }
 
         .token-details {
@@ -241,6 +317,10 @@
             width: 70%;
             text-align: justify;
             text-justify: inter-word;
+            @media screen and (max-width:768px) {
+                margin: 0 auto;
+                text-align: center;
+            }
           }
         }
       }
@@ -264,16 +344,23 @@
         font-size: 1.5rem;
         width: 60%;
         margin: 0 auto;
+        @media screen and (max-width:768px) {
+          font-size: 1rem;
+        }
       }
 
       .roadmap-card-container {
         margin: 5% auto;
         width: 100%;
-        gap:10%;
+        gap: 10%;
         display: flex;
         justify-content: center;
-
-        hr{
+        @media screen and (max-width:768px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+        hr {
           transform: rotate(90deg);
         }
 
@@ -361,11 +448,17 @@
       &:nth-child(odd) {
         flex-direction: row-reverse;
         transform: translateX(100%);
+        @media screen and (max-width:768px) {
+          transform: translateX(20%);
+        }
       }
 
       &:nth-child(even) {
         flex-direction: row-reverse;
         transform: translateX(-100%);
+        @media screen and (max-width:768px) {
+          transform: translateX(-20%);
+        }
       }
 
       // .bead {
@@ -383,9 +476,12 @@
       .content {
         width: auto;
         text-align: center;
+        @media screen and (max-width:768px) {
+          text-align: start;
+        }
 
         h5 {
-          font-size: 3rem;
+          font-size: 2rem;
         }
 
         ul {
@@ -395,7 +491,9 @@
         li {
           font-family: 'Roboto', sans-serif;
           font-size: 1.2rem;
-
+          @media screen and (max-width:768px) {
+            font-size: 1rem;
+          }
         }
 
       }
@@ -450,11 +548,17 @@
   h4 {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
+    @media screen and (max-width:768px) {
+        font-size: 1.2rem;
+    }
   }
 
   p {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
+    @media screen and (max-width:768px) {
+        font-size: 1rem;
+    }
 
     span {
       font-weight: 800;
@@ -462,29 +566,33 @@
   }
 }
 
-footer{
+footer {
   text-align: center;
-  h4{
+
+  h4 {
     font-size: 7rem;
   }
-  img{
+
+  img {
     width: 30rem;
     height: 30rem;
   }
 
-  div{
+  div {
     display: flex;
     width: 100%;
     justify-content: center;
     gap: 3%;
-    margin: 5% 0 ;
+    margin: 5% 0;
 
   }
-  .social{
+
+  .social {
     width: 8rem;
     height: 8rem;
     transition: all .2s ease-in;
-    &:hover{
+
+    &:hover {
       cursor: pointer;
       opacity: 0.6;
     }

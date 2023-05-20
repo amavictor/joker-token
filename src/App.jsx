@@ -171,6 +171,17 @@ function App() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   return (
     <ReactLenis root>
       <div className="main-container">
@@ -191,7 +202,7 @@ function App() {
             <div className='title-text'>
               $Joker
             </div>
-            <h2>In his sadness, he laughs</h2>
+            <h2>The madness is like gravity, all it takes is a little push.</h2>
             <img src={JokerToken} />
             <img src={JokerToken} />
             <img src={JokerToken} />
