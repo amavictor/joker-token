@@ -329,7 +329,7 @@ function App() {
             <div id="roadmap" ref={roadMap}>
               <h3>Roadmap</h3>
               <div className='description'>
-                <p>All jokes aside, here is a rough sketch of $pepe path ahead.
+                <p>All jokes aside, here is a rough sketch of $Joker path ahead.
                   We dont wan’t to give everything away on day 1 😁
                 </p>
 
