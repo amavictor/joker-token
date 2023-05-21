@@ -40,11 +40,20 @@ function App() {
   const howToBuy = useRef(null)
   const tokenNomics = useRef(null)
   const roadMap = useRef(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = (target) => {
     target.current?.scrollIntoView({ behavior: 'smooth' });
+
+    console.log("scroll", target)
+    if (isMenuOpen) {
+      toggleMenu()
+    }
   }
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   //roadmap scroll effect
 
@@ -189,13 +198,35 @@ function App() {
           <img src={Joker} alt="Joker" />
           <div className="light" />
           <nav>
-            <ul>
-              <li onClick={() => handleScroll(home)}>Home</li>
-              <li onClick={() => handleScroll(aboutSection)}>About</li>
-              <li onClick={() => handleScroll(howToBuy)}>How to buy</li>
-              <li onClick={() => handleScroll(tokenNomics)}>Tokenomics</li>
-              <li onClick={() => handleScroll(roadMap)}>Roadmap</li>
+
+            <ul className={`${isMenuOpen ? 'show' : ''}`}>
+              <div className={`close-button ${isMenuOpen && "show-cancel"}`} onClick={toggleMenu}>
+                &#10005;
+              </div>
+              <li onClick={() =>
+                handleScroll(home)
+              }>Home</li>
+              <li onClick={() =>
+                handleScroll(aboutSection)
+              }>About</li>
+              <li onClick={() =>
+                handleScroll(howToBuy)
+              }>How to buy</li>
+              <li onClick={() =>
+                handleScroll(tokenNomics)
+              }>Tokenomics</li>
+              <li onClick={() =>
+                handleScroll(roadMap)
+              }>Roadmap</li>
             </ul>
+
+            <div className='hamburger-container' onClick={toggleMenu}>
+              <div className='hamburger' />
+              <div className='hamburger' />
+              <div className='hamburger' />
+            </div>
+
+
           </nav>
 
           <div className='title'>
@@ -260,7 +291,7 @@ function App() {
                 <div className='card'>
                   <div className='card-details'>
                     <h4>Switch Eth for $Joker</h4>
-                    <p>switch ETH for <span>$JOKER</span>. We have ZERO taxes so you don’t need to worry about buying with a specific slippage, although you may need to use slippage during times of market volatility.</p>
+                    <p>switch ETH for <span>$JOKER</span>. with our low taxes, you should have no problems, but you may need to use slippage during times of market volatility.</p>
                   </div>
                   <img src={Joker4} className="card-image" />
                 </div>
@@ -273,15 +304,15 @@ function App() {
               <h3>Tokenomics</h3>
               <div className='tokenomics-details'>
                 <div>
-                  <h5>Token supply: 420,690,000,000,000</h5>
+                  <h5>Token supply: 10,000,000</h5>
                   <div className='token-details'>
                     <p>
-                      No Taxes, No Bullshit. It’s that simple.
-                      93.1% of the tokens were sent to the liquidity pool, LP tokens were burnt, and contract is renounced.
-                      The remaining 6.9% of the supply is being held in a multi-sig wallet only to be used
+                      2% Taxes, No Bullshit. It’s that simple.
+                      80% of the tokens were sent to the liquidity pool, LP tokens were burnt, and contract is renounced.
+                      The remaining 20% of the supply is being held in a multi-sig wallet only to be used
                       as tokens for future centralized exchange listings, bridges, and
                       liquidity pools. This wallet is easily trackable with the ENS name
-                      “pepecexwallet.eth”</p>
+                      “jokerwallet.eth”</p>
                   </div>
                 </div>
                 <div className='chart'>
@@ -334,7 +365,7 @@ function App() {
                         <li>Launch</li>
                         <li>CoinGecko/Coinmarketcap Listings</li>
                         <li>1,000+ Holders</li>
-                        <li>Get $PEPE Trending on Twitter with our memetic power</li>
+                        <li>Get $JOKER Trending on Twitter with our memetic power</li>
                       </ul>
                     </div>
                   </div>
@@ -351,7 +382,7 @@ function App() {
                         <li>Launch</li>
                         <li>CoinGecko/Coinmarketcap Listings</li>
                         <li>1,000+ Holders</li>
-                        <li>Get $PEPE Trending on Twitter with our memetic power</li>
+                        <li>Get $JOKER Trending on Twitter with our memetic power</li>
                       </ul>
                     </div>
                   </div>
@@ -368,7 +399,7 @@ function App() {
                         <li>Launch</li>
                         <li>CoinGecko/Coinmarketcap Listings</li>
                         <li>1,000+ Holders</li>
-                        <li>Get $PEPE Trending on Twitter with our memetic power</li>
+                        <li>Get $JOKER Trending on Twitter with our memetic power</li>
                       </ul>
                     </div>
                   </div>
