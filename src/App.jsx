@@ -371,7 +371,6 @@ function App() {
                   </div>
 
                   <div className="section">
-                    {/* <div className="bead" /> */}
                     <div
                       className="content"
                       data-aos="fade-left"
@@ -379,8 +378,8 @@ function App() {
                     >
                       <h5>Phase 2</h5>
                       <ul>
-                        <li>Community Partnerships Pepe Times digital newsletter</li>
-                        <li>Formation of token gated discord group, Pepe Palace, for holders, more details tba</li>
+                        <li>Community Partnerships Joker Times digital newsletter</li>
+                        <li>Formation of token gated discord group, Joker Palace, for holders, more details tba</li>
                         <li>CEX Listings 10,000+holders</li>
                         
                       </ul>
