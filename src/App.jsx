@@ -275,7 +275,7 @@ function App() {
                 <div className='card'>
                   <div className='card-details'>
                     <h4>Get some Eth</h4>
-                    <p>have ETH in your wallet to switch to <span>$JOKER.</span>If you don’t have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+                    <p>Have ETH in your wallet to switch to <span>$JOKER.</span>If you don’t have any ETH, you can buy directly on metamask, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
                   </div>
                   <img src={Joker2} className="card-image" />
                 </div>
@@ -283,7 +283,7 @@ function App() {
                 <div className='card'>
                   <div className='card-details'>
                     <h4>Go to Uniswap</h4>
-                    <p>connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app. Connect your wallet. Paste the <span>$JOKER</span> token address into Uniswap, select Joker, and confirm. When Metamask prompts you for a wallet signature, sign.</p>
+                    <p>Connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app. Connect your wallet. Paste the <span>$JOKER</span> token address into Uniswap, select Joker, and confirm. When Metamask prompts you for a wallet signature, sign.</p>
                   </div>
                   <img src={Joker3} className="card-image" />
                 </div>
@@ -291,7 +291,7 @@ function App() {
                 <div className='card'>
                   <div className='card-details'>
                     <h4>Switch Eth for $Joker</h4>
-                    <p>switch ETH for <span>$JOKER</span>. with our low taxes, you should have no problems, but you may need to use slippage during times of market volatility.</p>
+                    <p>Switch ETH for <span>$JOKER</span>. with our low taxes, you should have no problems, but you may need to use slippage during times of market volatility.</p>
                   </div>
                   <img src={Joker4} className="card-image" />
                 </div>
