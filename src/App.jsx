@@ -336,7 +336,7 @@ function App() {
                 <div className='roadmap-card-container'>
                   <div className='roadmap-card'>
                     <h4>Phase 1</h4>
-                    <p>Meme</p>
+                    <p>Joker</p>
                   </div>
                   <hr />
                   <div className='roadmap-card'>
@@ -346,7 +346,7 @@ function App() {
                   <hr />
                   <div className='roadmap-card'>
                     <h4>Phase 3</h4>
-                    <p>Meme Takeover</p>
+                    <p>Joker Takeover</p>
                   </div>
                 </div>
               </div>
@@ -379,10 +379,10 @@ function App() {
                     >
                       <h5>Phase 2</h5>
                       <ul>
-                        <li>Launch</li>
-                        <li>CoinGecko/Coinmarketcap Listings</li>
-                        <li>1,000+ Holders</li>
-                        <li>Get $JOKER Trending on Twitter with our memetic power</li>
+                        <li>Community Partnerships Pepe Times digital newsletter</li>
+                        <li>Formation of token gated discord group, Pepe Palace, for holders, more details tba</li>
+                        <li>CEX Listings 10,000+holders</li>
+                        
                       </ul>
                     </div>
                   </div>
@@ -396,10 +396,11 @@ function App() {
                     >
                       <h5>Phase 3</h5>
                       <ul>
-                        <li>Launch</li>
-                        <li>CoinGecko/Coinmarketcap Listings</li>
-                        <li>1,000+ Holders</li>
-                        <li>Get $JOKER Trending on Twitter with our memetic power</li>
+                        <li>Joker merch</li>
+                        <li>Joker Academy</li>
+                        <li>Joker Tools</li>
+                        <li>T1 Exchange Listings 100,000+ holders</li>
+                        <li>Joker takeover</li>
                       </ul>
                     </div>
                   </div>

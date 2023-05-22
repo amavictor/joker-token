@@ -449,7 +449,7 @@
         }
 
         .roadmap-card {
-          background-color: red;
+          // background-color: red;
           padding: 20px;
           width: 20rem;
           background: rgba(255, 255, 255, 0.05);
@@ -529,6 +529,13 @@
       align-items: center;
       min-height: 300px;
 
+      @media screen and (min-device-width: 900px)
+      and (max-device-width: 2050px) {
+        max-width: 80% !important;
+        min-width: 80% !important;
+
+      }
+
       &:nth-child(odd) {
         flex-direction: row-reverse;
         transform: translateX(100%);
@@ -540,6 +547,8 @@
         @media screen and (min-device-width: 900px)
         and (max-device-width: 2050px) {
           transform: translateX(30%);
+          max-width: 30rem !important;
+          min-width: 30rem !important;
         }
 
         // @media (min-device-width: 843px) and (max-device-width: 2050px) {
@@ -557,6 +566,10 @@
         @media screen and (min-device-width: 900px)
         and (max-device-width: 2050px) {
           transform: translateX(-30%);
+          max-width: 30rem !important;
+          min-width: 30rem !important;
+
+
         }
 
         // @media (min-device-width: 843px) and (max-device-width: 2050px) {
@@ -572,7 +585,7 @@
         -webkit-backdrop-filter: blur(6.5px);
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
-        padding: 3%;
+        padding: 6%;
 
         @media screen and (max-width:768px) {
           text-align: start;
@@ -581,6 +594,7 @@
           background: rgba(0, 0, 0, 1) !important;
 
         }
+       
 
         h5 {
           font-size: 2rem;
@@ -591,9 +605,8 @@
           }
         }
 
-        ul {
-          list-style: none;
-        }
+        // ul {
+          
 
         li {
           font-family: 'Roboto', sans-serif;
